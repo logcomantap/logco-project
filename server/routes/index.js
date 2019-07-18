@@ -1,8 +1,8 @@
 const routes = require("express").Router()
 const User = require("./user.js")
-const Image = require("./image.js")
+const Image = require("./logo")
 
-routes.use("/", User)
-routes.use("/image", Image)
+routes.use("/users", User)
+// routes.use("/image", Image)
 
 module.exports = routes
