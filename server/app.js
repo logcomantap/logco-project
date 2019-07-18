@@ -6,7 +6,15 @@ const cors = require('cors');
 const app = express();
 const errorHandler = require('./helpers/errorHandler.js');
 
-mongoose.connect('mongodb://localhost/tag-it', {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost/tag-it', {useNewUrlParser: true})
+.then(()=>{
+    console.log('connected');
+    
+})
+.catch(()=>{
+    console.log('failed to connect');
+    
+})
 
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json());
