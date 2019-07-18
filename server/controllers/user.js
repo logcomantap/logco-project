@@ -3,8 +3,8 @@ const { compareHash } = require('../helpers/bcrypt');
 const { generateToken } = require('../helpers/jwt');
 class UserController {
 	static register(req, res, next) {
-		const { username, email, password } = req.body;
-		let newUser = { username, email, password };
+		const { email, password } = req.body;
+		let newUser = { email, password };
 		User.create(newUser)
 			.then((user) => {
 				res.status(201).json({ message: 'register completed.' });
