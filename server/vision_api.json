@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "logco-247110",
+  "private_key_id": "e0bdfb1cb07ed14cbde5af4758455d47c4a3fa5c",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDLE2V3Wy8MUSz8\n3/K0YPMGAGhJ53EQeUEDZI/4N+v6PzHWlImlV/d9usvvmwhwW6fbTPyR6A0q6SQl\n5sBzBoJgcf5LwcF09C3TEZgqBz4K/nvVX4DH45/m/u0KHZtMkkm+DCWsLuTTxR+l\nrZHsWo+bPaxac+wNyVys8D5bDOqi5Kk9KYthnk9ArPIyxvjsS64vHDGdrChwpalK\n6OspuNEE6aAQ4H53UZppbG9Tpd0Z0qAkWbM9kte3ZaDnFc6D+FstfhuwxCm5cCH4\nCvmAK7Br0lQr84WVyBy2qAfCF7XfB6ZeuwXitYXrkWsJwP9GMS1eCpTbDfvZmFzk\nHXN/RkDlAgMBAAECgf8OmgqVPpplzRGecnvbJx1uwtGga8ruUVfgH3dqDE95pXBr\nNlXxvQKv2ENWaPVFV9aKj2bcIGGPoVnSHXmTF5jgARltwVrb1RGvVG6chA65GnbW\neILAh1sUedfA2PfWbTMZGF40ylnPsOsQ4jEzlJHIVW4Fqq75H2T8TLu9S4XMaWdX\n09IJFcKb0U90m7v6yaKeupkKucaQct0TpJPIe0kRWI4QT82P+rJ9mcelKKuaT2rF\nABiOphKPysoRlut1GmwyayJopmkud9ollQuc/I+lc3wsaetvo9tM7SMVDXXopYDg\nEEhY1wY8z3ANH9EKKy7aptDSekS5tDGf+OLBSOUCgYEA81KeyT/OEL1ziesEDX+Z\nK1dFe1MvfClN7SOT+OyINNJyqQZ0VQCqjhkz1dNLgHRlQfKAU04fTwz3mkHMEXU+\nxZ3NB3JvAyVOoumgWhXuTjYkVgWLO9PmqA2cEb6WjdjCGrkLLtG+JAYGjaqwfSea\nBS/YQF0IZwKkVlYVHjhOKr8CgYEA1af4xhlXdswOwCsERaEwZf6OqP7nxh8i6WK8\nI/Gu4lX7cJIzS6oZZI4CW+B/LoMvy9R6aKncGIpQ71dkKyYZg3q41TqiWNMb4Jy4\n0cBUtqO9KgCq/AGxmg72bF2VbAnu8Zca2A0zojxRDit3Td/0YY26RSV3s39B5acF\n3fbRsVsCgYEAv1+3BYAKeb4X1lyihl9aP+1W96U4jsYJxT6bTkfy5OC0T96Etqpc\neoC19TJHitOBJHovldW26DzBrXCcqQp3AYSYUogdafL4w0dO2Cuxj5Ajygh4Nuj1\n3C1AF/C3hv75w3zQn9VVYA3hL6EVSIpSKEw2IIFLb4FzcXgpCeitCg8CgYBZh0dh\ni2DxMNTFhcEGhGLJen/BJP9uL8HrVipMTYvg3/K62yiPfjmhvzgR0+K3VNWEbgbV\nMMg/qEX95PrecdqjE5u8DhPVcLDvz/xKOHPHDJnJrfn4G6WWTsrH4fcpDIiJx63B\n9tY6F1hHvcMCaOP4tPDm5KpiFuNAHlsBBdocnQKBgQC0nM+7BCuPfyw9h2FtAjrO\nFPNfm0J3XW/lRwpSDUNTz1iAodNh00eRkaOW9j9FYlOHYta8BKPu3t5OZUebT6NT\nyDaRwaDfKN0jZ2DJ+2H87O/A9BipW2rug7fcQLrOmbpDxwdRq1kzBPEE1HdFQOqf\nR5b+VkStLGaA2cDHP9fgeA==\n-----END PRIVATE KEY-----\n",
+  "client_email": "logco-vision@logco-247110.iam.gserviceaccount.com",
+  "client_id": "105164826175089326461",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/logco-vision%40logco-247110.iam.gserviceaccount.com"
+}
