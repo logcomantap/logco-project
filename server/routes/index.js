@@ -1,11 +1,10 @@
 const routes = require("express").Router()
-// const User = require("./user.js")
-// const Image = require("./image.js")
+const User = require("./user.js")
+const Logo = require("./logo")
 const wikipedia = require('./wikipedia');
 
-// routes.use("/", User)
-// routes.use("/image", Image)
+routes.use("/logos", Logo)
+routes.use("/users", User)
 routes.use('/wikipedia', wikipedia)
-
 
 module.exports = routes
