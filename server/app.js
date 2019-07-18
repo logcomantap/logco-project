@@ -6,7 +6,7 @@ const cors = require('cors');
 const app = express();
 const errorHandler = require('./helpers/errorHandler.js');
 
-mongoose.connect('mongodb://localhost/tag-it', {useNewUrlParser: true})
+mongoose.connect('mongodb://localhost/logco', {useNewUrlParser: true})
 .then(()=>{
     console.log('connected');
     
