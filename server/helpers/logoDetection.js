@@ -5,7 +5,10 @@ const client = new vision.ImageAnnotatorClient({
 
 const logoDetection = (req, res, next) => {
   console.log('masuk tag')
-  console.log(req.file.cloudStoragePublicUrl);
+  // console.log(req.file.cloudStoragePublicUrl);
+  if(req.file.cloudStoragePublicUrl === undefined){
+    next()
+  }
   client
   .logoDetection(req.file.cloudStoragePublicUrl)
   .then(results => {

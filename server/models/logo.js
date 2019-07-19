@@ -11,8 +11,7 @@ const logoSchema = new Schema({
         required: true
     },
     description: {
-        type: String,
-        required: true
+        type: String
     },
     user_id: {type: Schema.Types.ObjectId, ref: 'User'}
 },{timestamps : true})

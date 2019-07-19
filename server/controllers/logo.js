@@ -16,6 +16,11 @@ class LogoController{
                 message: 'Sorry logo tidak dikenali'
             })
         }
+        else if(req.file.cloudStoragePublicUrl == undefined){
+            res.status(200).json({
+                message: "there's no file to upload"
+            })
+        }
         else {
             Logo.create({
                 name: req.body.logo[0],
@@ -49,7 +54,7 @@ class LogoController{
     }
 
     static delete(req,res,next){
-        Logo.findByIdAndDelete({user_id: req.decoded.id})
+        Logo.findOneAndDelete({_id : req.params.id})
         .then(function(data){
             res.status(200).json(data)
         })

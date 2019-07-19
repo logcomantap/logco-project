@@ -8,6 +8,7 @@ class UserController {
 		User.create(newUser)
 			.then((user) => {
 				res.status(201).json({ message: 'register completed.' });
+				
 			})
 			.catch(next);
 	}
@@ -21,13 +22,13 @@ class UserController {
 					if (compareHash(password, user.password)) {
 						let payload = {
 							id: user._id,
-							username: user.username,
 							email: user.email
 						};
 						let token = generateToken(payload);
 						res.status(200).json({
 							token: token,
-							user: user._id
+							user: user._id,
+							name: user.email
 						});
 					} else {
 						throw new Error('invalid username / password')
