@@ -6,10 +6,14 @@ const Logo = require('../models/logo')
 
 class LogoController{
     static create(req,res,next){
-        console.log(req.body);
+        console.log(req.body.logo[0]);
+        console.log(req.decoded.id);
+        
+        console.log(req.body.desc);
+        
         if(req.body.logo.length <= 0){
             res.status(200).json({
-                message: 'Logo tidak dikenal'
+                message: 'Sorry logo tidak dikenali'
             })
         }
         else {
@@ -27,14 +31,30 @@ class LogoController{
         }
     }
 
-    static fetchAll(){
-        Logo.find()
+    static fetchAll(req,res,next){
+        Logo.find().sort({createdAt: -1})
         .then(function(data){
             res.status(200).json(data)
         })
         .catch(next)
     }
 
+
+    static fetchOwner(req,res,next){
+        Logo.find({user_id : req.decoded.id}).sort({createdAt: -1})
+        .then(function(data){
+            res.status(200).json(data)
+        })
+        .catch(next)
+    }
+
+    static delete(req,res,next){
+        Logo.findByIdAndDelete({user_id: req.decoded.id})
+        .then(function(data){
+            res.status(200).json(data)
+        })
+        .catch(next)
+    }
     
 
 
