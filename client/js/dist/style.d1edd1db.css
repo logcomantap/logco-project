@@ -1,0 +1,95 @@
+html,
+body {
+  height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  /* display: -ms-flexbox; */
+  /* display: -webkit-box; */
+  /* display: flex; */
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  /* padding-top: 40px; */
+  /* padding-bottom: 40px; */
+  background-color: #FFFAF2;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+#sidebar {
+  /* width: 250px; */
+  /* position: fixed; */
+  top: 0;
+  left: 0;
+  height: 100%;
+  /* z-index: 999; */
+  background: #fff;
+  color: #fff;
+  transition: all 0.3s;
+  padding: 0px;
+  /* margin: 5px */
+}
+
+#list-sidebar {
+  width: 100%
+}
+
+.list-sidebar-child {
+  background-color: #fff;
+  color: black;
+  padding-left: 30px
+}
+
+.list-sidebar-child:hover {
+  background-color: #8DCDFF
+}
+
+.hover-white:hover {
+  color: #fff
+}
+
+/* .margin-l {
+  margin-left: 50px
+} */
+
+.margin-l:first-child {
+  margin-left: 30px
+}
+
+/*# sourceMappingURL=/style.d1edd1db.css.map */
