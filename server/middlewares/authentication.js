@@ -1,10 +1,10 @@
-const { verify } = require('../helpers/jwt')
+const { verifyToken } = require('../helpers/jwt')
 const User = require('../models/user')
 
 module.exports = (req, res, next) => {
     
     try {
-        const decode = verify(req.headers.token)
+        const decode = verifyToken(req.headers.token)
         req.decoded = decode
     }
     catch (err) {

@@ -25,7 +25,10 @@ class UserController {
 							email: user.email
 						};
 						let token = generateToken(payload);
-						res.status(200).json(token);
+						res.status(200).json({
+							token: token,
+							user: user._id
+						});
 					} else {
 						throw new Error('invalid username / password')
 					}
