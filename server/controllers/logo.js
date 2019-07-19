@@ -54,7 +54,7 @@ class LogoController{
     }
 
     static delete(req,res,next){
-        Logo.findOneAndDelete({user_id: req.decoded.id})
+        Logo.findOneAndDelete({_id : req.params.id})
         .then(function(data){
             res.status(200).json(data)
         })

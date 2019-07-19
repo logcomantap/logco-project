@@ -12,6 +12,6 @@ logoRouter.use(authentication)
 logoRouter.get('/all',LogoController.fetchAll)
 logoRouter.get('/owner',LogoController.fetchOwner)
 logoRouter.post('/',imageUpload.multer.single('image'),imageUpload.sendUploadToGCS,logoDetection,WikiController,LogoController.create)
-logoRouter.delete('/',LogoController.delete)
+logoRouter.delete('/:id',LogoController.delete)
 
 module.exports = logoRouter

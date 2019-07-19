@@ -27,7 +27,7 @@
       </ul>
     </div>
       <div class="col-sm-10" style="padding: 30px;">
-        <h1 style="text-align: center">Welcome, name</h1>
+        <h1 style="text-align: center">Welcome, {{username}}</h1>
         <p style="text-align: center; padding-bottom: 20px">
           <img src="https://raw.githubusercontent.com/logcomantap/logco-project/kholis/client/img/wavy-line.png" />
         </p>
@@ -60,6 +60,11 @@ export default {
       logos: []
     };
   },
+  computed: {
+    username(){
+      return localStorage.getItem('name')
+    }
+  },
   methods: {
     findAll() {
       axios({
@@ -79,7 +84,7 @@ export default {
         });
     },
     addLogo(payload) {
-      this.logos.push(payload);
+      this.logos.unshift(payload);
     },
     signout() {
       localStorage.clear();
