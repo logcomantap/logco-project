@@ -1,6 +1,6 @@
 <template>
   <div>
-    <listlogos v-for="logo in logos" :key="logo._id" :mylogos="logo" />
+    <listlogos v-for="logo in logos" :key="logo._id" :mylogos="logo" @delete-logo="deleted" />
   </div>
 </template>
 
@@ -14,6 +14,12 @@ export default {
     return {
       logos: []
     };
+  },
+  methods: {
+    deleted(payload) {
+      let index = this.logos.indexOf(payload);
+      this.logos.splice(index, 1);
+    }
   },
   created() {
     axios({

@@ -1,5 +1,6 @@
 <template>
   <div>
+        <div style="height: 6rem;" v-if="!isLogin">&nbsp;</div>
     <div v-if="isLogin">
       <navbar @check-login="checks"/>
     </div> 

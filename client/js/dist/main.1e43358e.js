@@ -8882,7 +8882,7 @@ function patchScopedSlots (instance) {
   }
 }
 
-},{}],"src/components/listogos.vue":[function(require,module,exports) {
+},{}],"src/components/modal.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -8898,16 +8898,151 @@ exports.default = void 0;
 //
 //
 //
+//
+var _default = {
+  props: ["mylogo"],
+  data: function data() {
+    return {
+      name: "",
+      desc: ""
+    };
+  },
+  created: function created() {
+    console.log("masuk modal");
+    this.name = this.mylogo.name;
+    this.desc = this.mylogo.description;
+    console.log(this.mylogo);
+  }
+};
+exports.default = _default;
+        var $0284c4 = exports.default || module.exports;
+      
+      if (typeof $0284c4 === 'function') {
+        $0284c4 = $0284c4.options;
+      }
+    
+        /* template */
+        Object.assign($0284c4, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("ul", { staticClass: "list-group" }, [
+      _c("li", { staticClass: "list-group-item" }, [
+        _c("h3", [_vm._v(_vm._s(_vm.name))])
+      ]),
+      _vm._v(" "),
+      _vm.desc
+        ? _c("li", { staticClass: "list-group-item" }, [
+            _c("small", [_vm._v(_vm._s(_vm.desc))])
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      !_vm.desc
+        ? _c("li", { staticClass: "list-group-item" }, [
+            _c("small", [_vm._v("No Description")])
+          ])
+        : _vm._e()
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: null,
+            functional: undefined
+          };
+        })());
+      
+    /* hot reload */
+    (function () {
+      if (module.hot) {
+        var api = require('vue-hot-reload-api');
+        api.install(require('vue'));
+        if (api.compatible) {
+          module.hot.accept();
+          if (!module.hot.data) {
+            api.createRecord('$0284c4', $0284c4);
+          } else {
+            api.reload('$0284c4', $0284c4);
+          }
+        }
+
+        
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+      }
+    })();
+},{"_css_loader":"../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.runtime.esm.js"}],"src/components/listogos.vue":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _modal = _interopRequireDefault(require("./modal"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default = {
   name: "each-logo",
   props: ["mylogos"],
+  data: function data() {
+    return {
+      isDetail: false
+    };
+  },
+  components: {
+    modaldetail: _modal.default
+  },
   created: function created() {
     console.log("lislogos");
     console.log(this.mylogos);
   },
   methods: {
+    checkDetail: function checkDetail() {
+      if (this.isDetail == false) {
+        this.isDetail = true;
+      } else {
+        this.isDetail = false;
+      }
+    },
     checkUser: function checkUser(id) {
-      console.log('check');
+      console.log("check");
       console.log(localStorage.getItem("user"));
 
       if (localStorage.getItem("user") == id) {
@@ -8927,11 +9062,9 @@ var _default = {
         }
       }).then(function (_ref) {
         var data = _ref.data;
-        console.log(data, '====');
+        console.log(data, "====");
 
-        var index = _this.mylogos.indexOf(data);
-
-        _this.mylogos.splice(index, 1);
+        _this.$emit('delete-logo', data);
       }).catch(function (err) {
         console.log(err);
       });
@@ -8952,25 +9085,61 @@ exports.default = _default;
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("img", { attrs: { src: _vm.mylogos.picture, alt: "logo" } }),
-    _vm._v(" "),
-    _c("p", [_vm._v(_vm._s(_vm.mylogos.name))]),
-    _vm._v(" "),
-    _c("p", [_vm._v(_vm._s(_vm.mylogos.description))]),
-    _vm._v(" "),
-    _vm.checkUser(_vm.mylogos.user_id)
-      ? _c(
-          "button",
-          {
-            on: {
-              click: function($event) {
-                return _vm.deleteLogos(_vm.mylogos._id)
-              }
-            }
-          },
-          [_vm._v("delete")]
-        )
-      : _vm._e()
+    _c(
+      "div",
+      {
+        staticClass: "card d-flex margin-l",
+        staticStyle: { width: "400px", height: "200px" }
+      },
+      [
+        _c("img", {
+          staticClass: "img-thumbnail",
+          staticStyle: { width: "150px", height: "150px" },
+          attrs: { src: _vm.mylogos.picture, alt: "..." }
+        }),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "card-body", staticStyle: { padding: "5px" } },
+          [
+            _c("small", [
+              _c(
+                "a",
+                {
+                  staticClass: "card-text",
+                  attrs: { href: "#" },
+                  on: { click: _vm.checkDetail }
+                },
+                [
+                  _vm._v(
+                    "\n              Didn't know\n              this logo?\n          "
+                  ),
+                  _vm.checkUser(_vm.mylogos.user_id)
+                    ? _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-primary",
+                          on: {
+                            click: function($event) {
+                              return _vm.deleteLogos(_vm.mylogos._id)
+                            }
+                          }
+                        },
+                        [_vm._v("delete")]
+                      )
+                    : _vm._e()
+                ]
+              )
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _vm.isDetail
+          ? _c("modaldetail", { attrs: { mylogo: _vm.mylogos } })
+          : _vm._e()
+      ],
+      1
+    )
   ])
 }
 var staticRenderFns = []
@@ -9006,7 +9175,7 @@ render._withStripped = true
       
       }
     })();
-},{"_css_loader":"../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.runtime.esm.js"}],"src/components/mypost.vue":[function(require,module,exports) {
+},{"./modal":"src/components/modal.vue","_css_loader":"../../../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.runtime.esm.js"}],"src/components/mypost.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -9032,6 +9201,12 @@ var _default = {
     return {
       logos: []
     };
+  },
+  methods: {
+    deleted: function deleted(payload) {
+      var index = this.logos.indexOf(payload);
+      this.logos.splice(index, 1);
+    }
   },
   created: function created() {
     var _this = this;
@@ -9066,7 +9241,11 @@ exports.default = _default;
   return _c(
     "div",
     _vm._l(_vm.logos, function(logo) {
-      return _c("listlogos", { key: logo._id, attrs: { mylogos: logo } })
+      return _c("listlogos", {
+        key: logo._id,
+        attrs: { mylogos: logo },
+        on: { "delete-logo": _vm.deleted }
+      })
     }),
     1
   )
@@ -9138,6 +9317,30 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default = {
   name: "upload",
   data: function data() {
@@ -9145,6 +9348,7 @@ var _default = {
       picture: "",
       filename: "",
       error: "",
+      message: "",
       isLoading: false
     };
   },
@@ -9171,14 +9375,31 @@ var _default = {
         data: newImage
       }).then(function (_ref) {
         var data = _ref.data;
-        _this.isLoading = false;
-        Swal.fire("Now you know the answer!", "success");
 
-        _this.$emit("add-image", data);
+        if (data.message !== undefined) {
+          _this.isLoading = false;
+          _this.message = data.message;
+          Swal.fire({
+            type: "error",
+            text: "".concat(_this.message)
+          });
+        } else {
+          _this.isLoading = false;
+          Swal.fire({
+            position: "top-end",
+            type: "success",
+            title: "Now you know the answer!",
+            showConfirmButton: false,
+            timer: 1500
+          });
 
-        console.log(data);
+          _this.$emit("add-image", data);
+
+          console.log(data);
+        }
       }).catch(function (err) {
         console.log(err);
+        _this.isLoading = false;
         _this.error = err.response.data.message;
       });
     }
@@ -9200,57 +9421,128 @@ exports.default = _default;
   return _c("div", [
     _c("div", [
       _c(
-        "form",
+        "div",
         {
-          on: {
-            submit: function($event) {
-              $event.preventDefault()
-              return _vm.addPost($event)
-            }
+          staticClass: "modal fade",
+          attrs: {
+            id: "addarticlemodal",
+            tabindex: "-1",
+            role: "dialog",
+            "aria-labelledby": "exampleModalLabel",
+            "aria-hidden": "true"
           }
         },
         [
-          _c("div", { staticClass: "custom-file" }, [
-            _c(
-              "label",
-              {
-                staticClass: "custom-file-label text-truncate",
-                attrs: { for: "inputGroupFile01" }
-              },
-              [_vm._v(_vm._s(_vm.filename))]
-            ),
-            _vm._v(" "),
-            _c("input", {
-              ref: "myFiles",
-              staticClass: "custom-file-input",
-              attrs: {
-                type: "file",
-                id: "inputGroupFile01",
-                "aria-describedby": "inputGroupFileAddon01",
-                multiple: ""
-              },
-              on: { change: _vm.previewFiles }
-            })
-          ]),
-          _vm._v(" "),
           _c(
-            "button",
-            {
-              staticClass: "btn btn-success",
-              attrs: { type: "submit", id: "submitEdit" }
-            },
-            [_vm._v("Post")]
+            "div",
+            { staticClass: "modal-dialog", attrs: { role: "document" } },
+            [
+              _c("div", { staticClass: "modal-content" }, [
+                _vm._m(0),
+                _vm._v(" "),
+                _c("div", { staticClass: "modal-body" }, [
+                  _c(
+                    "form",
+                    {
+                      on: {
+                        submit: function($event) {
+                          $event.preventDefault()
+                          return _vm.addPost($event)
+                        }
+                      }
+                    },
+                    [
+                      _c("div", { staticClass: "custom-file" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "custom-file-label text-truncate",
+                            attrs: { for: "inputGroupFile01" }
+                          },
+                          [_vm._v(_vm._s(_vm.filename))]
+                        ),
+                        _vm._v(" "),
+                        _c("input", {
+                          ref: "myFiles",
+                          staticClass: "custom-file-input",
+                          attrs: {
+                            type: "file",
+                            id: "inputGroupFile01",
+                            "aria-describedby": "inputGroupFileAddon01",
+                            multiple: ""
+                          },
+                          on: { change: _vm.previewFiles }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("br"),
+                      _vm._v(" "),
+                      _c("br"),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-success",
+                          attrs: { type: "submit", id: "submitEdit" }
+                        },
+                        [_vm._v("Post")]
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _vm.isLoading
+                  ? _c(
+                      "div",
+                      { staticClass: "d-flex justify-content-center" },
+                      [_vm._m(1)]
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                this.error != ""
+                  ? _c(
+                      "div",
+                      {
+                        staticClass: "alert alert-danger",
+                        attrs: { role: "alert" }
+                      },
+                      [_vm._v(_vm._s(_vm.error))]
+                    )
+                  : _vm._e()
+              ])
+            ]
           )
         ]
       )
-    ]),
-    _vm._v(" "),
-    _vm.isLoading
-      ? _c("div", { staticClass: "d-flex justify-content-center" }, [_vm._m(0)])
-      : _vm._e()
+    ])
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-header" }, [
+      _c(
+        "h5",
+        { staticClass: "modal-title", attrs: { id: "exampleModalLabel" } },
+        [_vm._v("Upload logo")]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "close",
+          attrs: {
+            type: "button",
+            "data-dismiss": "modal",
+            "aria-label": "Close"
+          }
+        },
+        [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+      )
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -9333,6 +9625,28 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default = {
   components: {
     mypost: _mypost.default,
@@ -9368,7 +9682,11 @@ var _default = {
     },
     signout: function signout() {
       localStorage.clear();
-      this.$emit('check-login', false);
+      this.$emit("check-login", false);
+    },
+    deleted: function deleted(payload) {
+      var index = this.logos.indexOf(payload);
+      this.logos.splice(index, 1);
     }
   },
   created: function created() {
@@ -9414,45 +9732,140 @@ exports.default = _default;
         _vm._v(" "),
         _c(
           "span",
-          {
-            staticClass: "navbar-brand mb-0 h1",
-            on: {
-              click: function($event) {
-                _vm.isMypost = true
-              }
-            }
-          },
-          [_vm._v("My Posts")]
-        ),
-        _vm._v(" "),
-        _c(
-          "span",
           { staticClass: "navbar-brand mb-0 h1", on: { click: _vm.signout } },
           [_vm._v("Signout")]
         )
       ]
     ),
     _vm._v(" "),
-    _c("div", { staticStyle: { height: "5.5rem" } }, [_vm._v(" ")]),
+    _c("div", { staticStyle: { height: "3rem" } }, [_vm._v(" ")]),
     _vm._v(" "),
     !_vm.isMypost
       ? _c("div", [_c("uploadpic", { on: { "add-image": _vm.addLogo } })], 1)
       : _vm._e(),
     _vm._v(" "),
     !_vm.isMypost
-      ? _c(
-          "div",
-          _vm._l(_vm.logos, function(logo) {
-            return _c("listlogos", { key: logo._id, attrs: { mylogos: logo } })
-          }),
-          1
-        )
+      ? _c("div", [
+          _c(
+            "div",
+            {
+              staticClass: "row",
+              staticStyle: { height: "500px", width: "100%" }
+            },
+            [
+              _c("div", { staticClass: "col-sm-2", attrs: { id: "sidebar" } }, [
+                _c(
+                  "ul",
+                  {
+                    staticClass: "list-group list-group-flush",
+                    attrs: { id: "list-sidebar" }
+                  },
+                  [
+                    _c(
+                      "li",
+                      {
+                        staticClass: "list-group-item",
+                        staticStyle: {
+                          "background-color": "#3E93DA",
+                          "text-align": "center"
+                        }
+                      },
+                      [_vm._v("Menu")]
+                    ),
+                    _vm._v(" "),
+                    _vm._m(0),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      {
+                        staticClass: "list-group-item list-sidebar-child",
+                        on: {
+                          click: function($event) {
+                            _vm.isMypost = true
+                          }
+                        }
+                      },
+                      [_vm._v("My Posts")]
+                    )
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "col-sm-10", staticStyle: { padding: "30px" } },
+                [
+                  _c("h1", { staticStyle: { "text-align": "center" } }, [
+                    _vm._v("Welcome, name")
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "d-flex flex-row justify-content-center",
+                      staticStyle: { margin: "10px" },
+                      attrs: { border: "" }
+                    },
+                    _vm._l(_vm.logos, function(logo) {
+                      return _c("listlogos", {
+                        key: logo._id,
+                        attrs: { mylogos: logo },
+                        on: { "delete-logo": _vm.deleted }
+                      })
+                    }),
+                    1
+                  )
+                ]
+              )
+            ]
+          )
+        ])
       : _vm._e(),
     _vm._v(" "),
     _c("div", [_vm.isMypost ? _c("mypost") : _vm._e()], 1)
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "list-group-item list-sidebar-child" }, [
+      _c(
+        "a",
+        {
+          staticStyle: { "text-decoration": "none", color: "black" },
+          attrs: {
+            href: "#",
+            "data-toggle": "modal",
+            "data-target": "#addarticlemodal",
+            "data-whatever": "@mdo"
+          }
+        },
+        [_vm._v("\n  Upload\n          logo")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "p",
+      { staticStyle: { "text-align": "center", "padding-bottom": "20px" } },
+      [
+        _c("img", {
+          attrs: {
+            src:
+              "https://raw.githubusercontent.com/logcomantap/logco-project/kholis/client/img/wavy-line.png"
+          }
+        })
+      ]
+    )
+  }
+]
 render._withStripped = true
 
           return {
@@ -9497,6 +9910,7 @@ var _navbar = _interopRequireDefault(require("./navbar"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+//
 //
 //
 //
@@ -9594,6 +10008,10 @@ exports.default = _default;
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
+    !_vm.isLogin
+      ? _c("div", { staticStyle: { height: "6rem" } }, [_vm._v(" ")])
+      : _vm._e(),
+    _vm._v(" "),
     _vm.isLogin
       ? _c("div", [_c("navbar", { on: { "check-login": _vm.checks } })], 1)
       : _vm._e(),
@@ -9862,7 +10280,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61503" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "38567" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
