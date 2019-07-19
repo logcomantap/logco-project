@@ -8942,7 +8942,7 @@ var staticRenderFns = [
         ]
       ),
       _vm._v(" "),
-      _c("div", { staticStyle: { height: "5.5rem" } }, [_vm._v(" ")])
+      _c("div", { staticStyle: { height: "3.5rem" } }, [_vm._v(" ")])
     ])
   }
 ]
@@ -9034,6 +9034,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
 var _default = {
   components: {
     navbar: _navbar.default
@@ -9077,6 +9078,10 @@ exports.default = _default;
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
+    !_vm.isLogin
+      ? _c("div", { staticStyle: { height: "6rem" } }, [_vm._v(" ")])
+      : _vm._e(),
+    _vm._v(" "),
     _c("div", [_vm.isLogin ? _c("navbar") : _vm._e()], 1),
     _vm._v(" "),
     !_vm.isLogin
@@ -9341,7 +9346,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61121" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61503" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

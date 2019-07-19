@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="/style.78032849.css">
 <script src="/style.78032849.js"></script></head>
 
@@ -40,21 +42,110 @@
   </section> -->
 
   <!-- Main Page -->
-  <section>
-    <div class="row" style="height: 500px">
-      <div class="col-sm border">
-        One of three columns
-      </div>
-      <div class="col-sm border">
-        One of three columns
-      </div>
-      <div class="col-sm border">
-        One of three columns
+  <!-- <section> -->
+  <div class="row" style="height: 500px; width: 100%">
+    <div class="col-sm-2" id="sidebar">
+      <ul class="list-group list-group-flush" id="list-sidebar">
+        <li class="list-group-item" style="background-color: #3E93DA; text-align: center">Menu</li>
+        <li class="list-group-item list-sidebar-child"><a href="#" style="text-decoration: none; color: black;">Upload
+            logo</a></li>
+        <li class="list-group-item list-sidebar-child">Menu 1</li>
+        <li class="list-group-item list-sidebar-child">Menu 2</li>
+        <li class="list-group-item list-sidebar-child">Menu 3</li>
+        <li class="list-group-item list-sidebar-child">Menu 4</li>
+        <li class="list-group-item list-sidebar-child">Menu 5</li>
+        <li class="list-group-item list-sidebar-child">Menu 6</li>
+
+      </ul>
+    </div>
+
+    <div class="col-sm-10 border" style="padding: 30px;">
+      <h1 style="text-align: center">Welcome, name</h1>
+      <p style="text-align: center; padding-bottom: 20px"><img src="/wavy-line.f051a805.png"></p>
+      <div class="d-flex flex-row justify-content-around">
+        <div class="card d-flex;" style="width: 15rem;">
+          <img src="http://www.blankinshippt.com/images/icons/blank-person.jpg" class="img-thumbnail" alt="...">
+          <div class="card-body" style="padding: 5px">
+            <small><a href="#" class="card-text" data-toggle="modal" data-target="#exampleModalScrollable">Didn't know
+                this logo?</a></small>
+          </div>
+        </div>
+        <div class="card" style="width: 15rem;">
+          <img src="http://www.blankinshippt.com/images/icons/blank-person.jpg" class="img-thumbnail" alt="...">
+          <div class="card-body" style="padding: 5px">
+            <small><a href="#" class="card-text" data-toggle="modal" data-target="#exampleModalScrollable">Didn't know
+                this logo?</a></small>
+          </div>
+        </div>
+        <div class="card" style="width: 15rem;">
+          <img src="http://www.blankinshippt.com/images/icons/blank-person.jpg" class="img-thumbnail" alt="...">
+          <div class="card-body" style="padding: 5px">
+            <small><a href="#" class="card-text" data-toggle="modal" data-target="#exampleModalScrollable">Didn't know
+                this logo?</a></small>
+          </div>
+        </div>
+        <div class="card" style="width: 15rem;">
+          <img src="http://www.blankinshippt.com/images/icons/blank-person.jpg" class="img-thumbnail" alt="...">
+          <div class="card-body" style="padding: 5px">
+            <small><a href="#" class="card-text" data-toggle="modal" data-target="#exampleModalScrollable">Didn't know
+                this logo?</a></small>
+          </div>
+        </div>
+        
       </div>
     </div>
-  </section>
+  </div>
+
+
+  <!-- Modal Logo-->
+  <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+      <div class="modal-content" style="text-align: justify; padding: 5px; height: 400px;">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalScrollableTitle">Logo Name</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur voluptates doloribus hic nulla, sint
+          fugiat incidunt ipsum, accusantium quam rem distinctio magni quasi labore perspiciatis porro et blanditiis
+          voluptatibus illum.
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad, saepe. Repellat ab ducimus quidem reiciendis
+          modi, molestiae rerum tenetur quae, quasi temporibus accusantium consequatur eum necessitatibus cumque
+          inventore itaque amet?
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore, excepturi assumenda veniam nihil laboriosam
+          nobis ea quos possimus placeat illum earum nostrum facilis quae esse porro neque doloribus id quasi!
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad repellendus accusamus placeat aut rerum eius
+          blanditiis architecto officia veritatis! A velit nihil adipisci aspernatur quas tempora eaque voluptate omnis
+          excepturi?
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi reprehenderit nobis illum maiores velit
+          molestiae ab itaque expedita delectus quisquam possimus architecto aspernatur veritatis, aut illo cupiditate
+          quos ut repellendus.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Id velit quaerat quidem distinctio dolore repellendus
+          eveniet numquam, vel, atque hic saepe rerum quod explicabo ratione soluta eos dicta. Sit, velit.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- </section> -->
+
+  <!-- Upload Page -->
+  <div>
+    
+  </div>
 </body>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<!-- jQuery CDN - Slim version (=without AJAX) -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<!-- Popper.JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+<!-- jQuery Custom Scroller CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="/main.1e43358e.js"></script>
 
